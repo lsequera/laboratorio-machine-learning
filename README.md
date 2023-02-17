@@ -1,43 +1,38 @@
-# laboratorio-machine-learning
-API Simple que sirve un modelo para la prevención del Churn
+# Machine-learning-lab
+Simple API to serve a model forecasting Churn
 
-## Tecnologías usadas
-This API uses a number of open source projects to work properly:
+This API is written in [Python] and it uses a number of open source projects to work properly:
 
-* [Python] - Lenguaje de programación
-* [Flask] - Libreria minimalista para el provisionamiento de APIs
-* [scikit-learn] - Libreria de aprendizaje automatico
-* [pickle] - Libreria para cargar y guardar variables en memoria
+* [Flask](https://flask.palletsprojects.com/) - Framework for provisioning of APIs
+* [scikit-learn](https://scikit-learn.org/) - Machine learning library
+* [xgboost](https://xgboost.ai/) - Another machine learning library
+* [pickle](https://docs.python.org/3/library/pickle.html) - Library to saving and loading pretrained models
 
-## Instalación Local
-Esta API requiere Python y las librerias señaladas en el requirements.txt
+The notebook contains the preprocessing of the data and the different tested models. XGBoost is the best performer with around 86% of accuracy for this dataset.
 
-1. Clonar repositorio
-2. Correr la api, ejecutando desde la carpeta de proyecto
+### Local install
+This API requires Python and the libraries in the file requirements.txt
+
+1. Clone the repository
+2. Run by executing the following command on the root directory of the project
 
 ```
 python app.py
 ```
 
-#### Verificar que la app esta corriendo exitosamente
+#### Testing the app
 
-La api se verifica mandando un ejemplo para confirmar que esta funcionando correctamente
+Send an explicit example to check the working:
 
 ```
 curl --location --request GET 'http://localhost:3001/query?feats=465,France,Female,51,8,122522.32,1,0,0,181297.65'
 ```
 
-Si todo esta bien, deberías de obtener una respuesta así
+If all is OK, you should get
 ```
 {"response": [1]}
 ```
 
-#### Equipo
+#### Acknowledgment
 
-* Juan Perez Nombrefalso
-* Ricardo Alanís Tamez
-
-#### Contribuir
-
-Hacer fork del repositorio y mandar pull request con los cambios propuestos
-
+This is a [fork](https://github.com/platzi/laboratorio-machine-learning) of a little project proposed in a laboratory course on [Platzi](https://platzi.com), and this is my proposal of solution for this challenge.
